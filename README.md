@@ -6,7 +6,39 @@
 
 ## Introduction
 
-It's a fork of the original Designable repository focused on React 19, Ant Design v5 version of a playground
+A fork of the original Designable repository focused on React 19 and Ant Design v6 support.
+
+### Dependency Baseline
+
+| Package               | Version |
+| --------------------- | ------- |
+| `react` / `react-dom` | 19.2.4  |
+| `antd`                | 6.3.1   |
+
+### Legacy schema compatibility (`migrateV5Schema`)
+
+Schemas produced by the previous (v5-based) editor are still loadable. Deprecated antd props (`bordered`, `dropdownMatchSelectWidth`, `tooltipVisible`, `tooltipPlacement`) produce console warnings in v6 but still render correctly.
+
+To automatically rewrite legacy keys to their v6 equivalents on load, enable the `migrateV5Schema` flag:
+
+```ts
+const engine = createDesigner({
+  // ...
+  migrateV5Schema: true,
+})
+```
+
+When `true`, `transformToTreeNode` applies the following normalizations to `x-component-props`:
+
+| Legacy key                 | v6 key                  |
+| -------------------------- | ----------------------- |
+| `bordered: false`          | `variant: 'borderless'` |
+| `bordered: true`           | `variant: 'outlined'`   |
+| `dropdownMatchSelectWidth` | `popupMatchSelectWidth` |
+| `tooltipVisible`           | `tooltip.open`          |
+| `tooltipPlacement`         | `tooltip.placement`     |
+
+When `false` (the default), schemas are loaded and saved with their original keys unchanged.
 
 ## Screenshot
 

@@ -1,4 +1,3 @@
-import '@ant-design/v5-patch-for-react-19'
 import {
   createDesigner,
   GlobalRegistry,
@@ -95,6 +94,7 @@ const App = () => {
           }),
         ],
         rootComponentName: 'Form',
+        migrateV5Schema: true,
       }),
     []
   )

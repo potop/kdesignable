@@ -1,4 +1,3 @@
-import { ArrayItems } from '@formily/antd-v5'
 import { ArrayField } from '@formily/core'
 import {
   ISchema,
@@ -9,6 +8,7 @@ import {
 } from '@formily/react'
 import { GlobalRegistry } from '@kdesignable/core'
 import { FoldItem } from '@kdesignable/react-settings-form'
+import { ArrayItems } from '@potop/formily-antd-v6'
 import { Select } from 'antd'
 import React from 'react'
 

@@ -28,12 +28,13 @@ export const Input: ISchema & { TextArea?: ISchema } = {
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
     },
-    bordered: {
-      type: 'boolean',
+    variant: {
+      type: 'string',
+      enum: ['outlined', 'borderless', 'filled', ''],
       'x-decorator': 'FormItem',
-      'x-component': 'Switch',
+      'x-component': 'Select',
       'x-component-props': {
-        defaultChecked: true,
+        defaultValue: 'outlined',
       },
     },
     maxLength: {
@@ -61,12 +62,13 @@ export const Input: ISchema & { TextArea?: ISchema } = {
 Input.TextArea = {
   type: 'object',
   properties: {
-    bordered: {
-      type: 'boolean',
+    variant: {
+      type: 'string',
+      enum: ['outlined', 'borderless', 'filled', ''],
       'x-decorator': 'FormItem',
-      'x-component': 'Switch',
+      'x-component': 'Select',
       'x-component-props': {
-        defaultChecked: true,
+        defaultValue: 'outlined',
       },
     },
     maxLength: {

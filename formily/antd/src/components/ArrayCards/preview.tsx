@@ -1,4 +1,3 @@
-import { ArrayBase } from '@formily/antd-v5'
 import { observer } from '@formily/react'
 import { TreeNode, createResource } from '@kdesignable/core'
 import {
@@ -8,6 +7,7 @@ import {
   useNodeIdProps,
   useTreeNode,
 } from '@kdesignable/react'
+import { ArrayBase } from '@potop/formily-antd-v6'
 import { Card, CardProps } from 'antd'
 import cls from 'classnames'
 import React, { Fragment } from 'react'

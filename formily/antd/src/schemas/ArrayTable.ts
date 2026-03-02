@@ -3,12 +3,13 @@ import { ISchema } from '@formily/react'
 export const ArrayTable: ISchema & { Addition?: ISchema; Column?: ISchema } = {
   type: 'object',
   properties: {
-    bordered: {
-      type: 'boolean',
+    variant: {
+      type: 'string',
+      enum: ['outlined', 'borderless', 'filled', ''],
       'x-decorator': 'FormItem',
-      'x-component': 'Switch',
+      'x-component': 'Select',
       'x-component-props': {
-        defaultChecked: true,
+        defaultValue: 'outlined',
       },
     },
     showHeader: {

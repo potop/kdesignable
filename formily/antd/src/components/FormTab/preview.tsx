@@ -7,8 +7,7 @@ import {
   useNodeIdProps,
   useTreeNode,
 } from '@kdesignable/react'
-import { Tabs } from 'antd'
-import { TabPaneProps, TabsProps } from 'antd/lib/tabs'
+import { Tabs, type TabsProps } from 'antd'
 import React, { Fragment, useState } from 'react'
 import { LoadTemplate } from '../../common/LoadTemplate'
 import { useDropTemplate } from '../../hooks'
@@ -34,7 +33,7 @@ const getCorrectActiveKey = (activeKey: string, tabs: TreeNode[]) => {
 }
 
 export const FormTab: DnFC<TabsProps> & {
-  TabPane?: React.FC<TabPaneProps>
+  TabPane?: React.FC<{ children?: React.ReactNode }>
 } = observer((props) => {
   const [activeKey, setActiveKey] = useState<string>()
   const nodeId = useNodeIdProps()
@@ -64,41 +63,36 @@ export const FormTab: DnFC<TabsProps> & {
         onChange={(id) => {
           setActiveKey(id)
         }}
-      >
-        {tabs.map((tab) => {
-          const props = tab.props['x-component-props'] || {}
-          return (
-            <Tabs.TabPane
-              {...props}
-              style={{ ...props.style }}
-              tab={
-                <span
-                  data-content-editable="x-component-props.tab"
-                  data-content-editable-node-id={tab.id}
-                >
-                  {props.tab}
-                </span>
-              }
-              key={tab.id}
-            >
-              {React.createElement(
-                'div',
-                {
-                  [designer.props.nodeIdAttrName]: tab.id,
-                  style: {
-                    padding: '20px 0',
-                  },
+        items={tabs.map((tab) => {
+          const tabProps = tab.props['x-component-props'] || {}
+          return {
+            key: tab.id,
+            style: { ...tabProps.style },
+            label: (
+              <span
+                data-content-editable="x-component-props.tab"
+                data-content-editable-node-id={tab.id}
+              >
+                {tabProps.tab}
+              </span>
+            ),
+            children: React.createElement(
+              'div',
+              {
+                [designer.props.nodeIdAttrName]: tab.id,
+                style: {
+                  padding: '20px 0',
                 },
-                tab.children.length ? (
-                  <TreeNodeWidget node={tab} />
-                ) : (
-                  <DroppableWidget node={tab} />
-                )
-              )}
-            </Tabs.TabPane>
-          )
+              },
+              tab.children.length ? (
+                <TreeNodeWidget node={tab} />
+              ) : (
+                <DroppableWidget node={tab} />
+              )
+            ),
+          }
         })}
-      </Tabs>
+      />
     )
   }
   return (

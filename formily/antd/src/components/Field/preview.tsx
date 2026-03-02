@@ -1,4 +1,3 @@
-import { FormItem } from '@formily/antd-v5'
 import { FormPath } from '@formily/core'
 import {
   ArrayField,
@@ -19,6 +18,7 @@ import {
   useTreeNode,
 } from '@kdesignable/react'
 import { isArr, isStr } from '@kdesignable/shared'
+import { FormItem } from '@potop/formily-antd-v6'
 import React from 'react'
 import { Container } from '../../common/Container'
 import { AllLocales } from '../../locales'

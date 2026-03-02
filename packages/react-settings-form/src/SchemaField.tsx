@@ -1,3 +1,4 @@
+import { createSchemaField, ISchemaFieldProps } from '@formily/react'
 import {
   ArrayItems,
   ArrayTable,
@@ -14,8 +15,7 @@ import {
   Space,
   Switch,
   TimePicker,
-} from '@formily/antd-v5'
-import { createSchemaField, ISchemaFieldProps } from '@formily/react'
+} from '@potop/formily-antd-v6'
 import { Slider } from 'antd'
 import React from 'react'
 import {

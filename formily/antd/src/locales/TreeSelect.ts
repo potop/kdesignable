@@ -32,7 +32,7 @@ export const TreeSelect = {
         maxTagTextLength: '最多标签文本长度',
         showArrow: '显示箭头',
         virtual: '开启虚拟滚动',
-        dropdownMatchSelectWidth: {
+        popupMatchSelectWidth: {
           title: '下拉选择器同宽',
           tooltip:
             '默认将设置 min-width，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动',
@@ -89,8 +89,8 @@ export const TreeSelect = {
         notFoundContent: 'Not Found Content',
         showArrow: 'Show Arrow',
         virtual: 'Use Virtual Scroll',
-        dropdownMatchSelectWidth: {
-          title: 'Dropdown Match Select Width',
+        popupMatchSelectWidth: {
+          title: 'Popup Match Select Width',
           tooltip:
             'By default, min-width will be set, and it will be ignored when the value is less than the width of the selection box. false will turn off virtual scrolling',
         },
@@ -150,8 +150,8 @@ export const TreeSelect = {
         notFoundContent: '내용 없음',
         showArrow: '화살표 보기',
         virtual: '수직 스크롤 사용',
-        dropdownMatchSelectWidth: {
-          title: '드롭다운 너비 맞추기',
+        popupMatchSelectWidth: {
+          title: '팝업 너비 맞추기',
           tooltip:
             '기본적으로 최소 너비가 설정되며 값이 선택 상자의 너비보다 작으면 무시됩니다.',
         },

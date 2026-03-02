@@ -61,12 +61,13 @@ export const NumberPicker: ISchema = {
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
     },
-    bordered: {
-      type: 'boolean',
+    variant: {
+      type: 'string',
+      enum: ['outlined', 'borderless', 'filled', ''],
       'x-decorator': 'FormItem',
-      'x-component': 'Switch',
+      'x-component': 'Select',
       'x-component-props': {
-        defaultChecked: true,
+        defaultValue: 'outlined',
       },
     },
     keyboard: {

@@ -16,7 +16,9 @@ export const saveSchema = (designer: Engine) => {
 export const loadInitialSchema = (designer: Engine) => {
   try {
     designer.setCurrentTree(
-      transformToTreeNode(JSON.parse(localStorage.getItem('formily-schema')))
+      transformToTreeNode(JSON.parse(localStorage.getItem('formily-schema')), {
+        migrateV5Schema: designer.props.migrateV5Schema,
+      })
     )
   } catch {}
 }

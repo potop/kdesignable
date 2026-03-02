@@ -26,7 +26,7 @@ export const ColorInput: React.FC<IColorInputProps> = (props) => {
             autoAdjustOverflow
             trigger="click"
             styles={{
-              body: {
+              content: {
                 padding: 0,
               },
             }}

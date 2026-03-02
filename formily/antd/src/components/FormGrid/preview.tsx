@@ -1,4 +1,3 @@
-import { FormGrid as FormilyGird } from '@formily/antd-v5'
 import { observer } from '@formily/reactive-react'
 import { TreeNode, createBehavior, createResource } from '@kdesignable/core'
 import {
@@ -7,6 +6,7 @@ import {
   useNodeIdProps,
   useTreeNode,
 } from '@kdesignable/react'
+import { FormGrid as FormilyGird } from '@potop/formily-antd-v6'
 import React, { PropsWithChildren } from 'react'
 import { LoadTemplate } from '../../common/LoadTemplate'
 import { AllLocales } from '../../locales'

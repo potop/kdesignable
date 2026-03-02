@@ -1,6 +1,6 @@
-import { DatePicker as FormilyDatePicker } from '@formily/antd-v5'
 import { createBehavior, createResource } from '@kdesignable/core'
 import { DnFC } from '@kdesignable/react'
+import { DatePicker as FormilyDatePicker } from '@potop/formily-antd-v6'
 import React from 'react'
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'

@@ -58,17 +58,17 @@
     }
   },
   "resolutions": {
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.0",
+    "@rc-component/util": "^1.9.0",
+    "@types/react": "19.2.4",
+    "@types/react-dom": "19.2.3",
     "sass": "^1.89.2",
     "sass-loader": "^16.0.5",
     "yargs": "^16.x"
   },
   "dependencies": {
-    "@ant-design/icons": "^6.0.0"
+    "@ant-design/icons": "^6.1.0"
   },
   "devDependencies": {
-    "@ant-design/v5-patch-for-react-19": "^1.0.3",
     "@rollup/plugin-commonjs": "^17.0.0",
     "@testing-library/jest-dom": "^5.0.0",
     "@testing-library/react": "^11.2.3",
@@ -77,11 +77,11 @@
     "@types/hoist-non-react-statics": "^3.3.1",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.6.8",
-    "@types/react": "^19.1.0",
-    "@types/react-dom": "^19.1.0",
+    "@types/react": "19.2.4",
+    "@types/react-dom": "19.2.3",
     "@typescript-eslint/eslint-plugin": "^5.54.0",
     "@typescript-eslint/parser": "^5.54.0",
-    "antd": "^5.26.6",
+    "antd": "6.3.1",
     "chalk": "^2.4.2",
     "chokidar": "^2.1.2",
     "concurrently": "^4.1.0",
@@ -132,10 +132,10 @@
     "pretty-format": "^24.0.0",
     "pretty-quick": "^3.1.0",
     "raw-loader": "^4.0.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "react-mde": "^12.0.8",
-    "react-test-renderer": "^19.1.0",
+    "react-test-renderer": "19.2.4",
     "rimraf": "^3.0.0",
     "rollup": "^2.37.1",
     "rollup-plugin-external-globals": "^0.6.1",
@@ -162,6 +162,6 @@
     "webpack-dev-server": "^5.2.2"
   },
   "engines": {
-    "node": "18.x || 20.x || 22.x"
+    "node": "22.x"
   }
 }

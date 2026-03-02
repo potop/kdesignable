@@ -1,6 +1,6 @@
-import { Select as FormilySelect } from '@formily/antd-v5'
 import { createBehavior, createResource } from '@kdesignable/core'
 import { DnFC } from '@kdesignable/react'
+import { Select as FormilySelect } from '@potop/formily-antd-v6'
 import React from 'react'
 import { AllLocales } from '../../locales'
 import { AllSchemas } from '../../schemas'

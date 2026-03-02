@@ -1,7 +1,7 @@
-import { FormItem, IFormItemProps } from '@formily/antd-v5'
 import { observer, useField } from '@formily/react'
 import { observable } from '@formily/reactive'
 import { IconWidget, usePrefix } from '@kdesignable/react'
+import { FormItem, IFormItemProps } from '@potop/formily-antd-v6'
 import cls from 'classnames'
 import React, { Fragment, PropsWithChildren, useMemo, useRef } from 'react'
 import './styles.scss'

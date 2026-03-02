@@ -31,24 +31,23 @@
     "react-tiny-popover": "^8.1.6"
   },
   "devDependencies": {
-    "@ant-design/v5-patch-for-react-19": "^1.0.3",
-    "@formily/antd-v5": "^1.2.4",
     "@formily/react": "^2.3.7",
     "@formily/reactive": "^2.3.7",
     "@formily/reactive-react": "^2.3.7",
     "@formily/shared": "^2.3.7",
-    "antd": "^5.26.6"
+    "@potop/formily-antd-v6": "2.0.1",
+    "antd": "^6.0.0"
   },
   "peerDependencies": {
-    "@formily/antd-v5": "^1.2.4",
     "@formily/react": "^2.3.7",
     "@formily/reactive": "^2.3.7",
     "@formily/reactive-react": "^2.3.7",
     "@formily/shared": "^2.3.7",
-    "antd": "^5.26.6"
+    "@potop/formily-antd-v6": "^2.0.1",
+    "antd": "^6.0.0"
   },
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=22.0.0",
     "npm": ">=3.0.0"
   },
   "publishConfig": {

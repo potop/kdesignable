@@ -1,6 +1,5 @@
 import { IconWidget, usePrefix } from '@kdesignable/react'
-import { Input, Upload } from 'antd'
-import { InputProps } from 'antd/lib/input'
+import { Input, type InputProps, Upload } from 'antd'
 import cls from 'classnames'
 import React, { useContext } from 'react'
 import { SettingsFormContext } from '../../shared/context'

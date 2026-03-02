@@ -104,5 +104,6 @@ export class Engine extends Event {
     outlineNodeIdAttrName: 'data-designer-outline-node-id',
     nodeTranslateAttrName: 'data-designer-node-translate-handler',
     defaultScreenType: ScreenType.PC,
+    migrateV5Schema: false,
   }
 }

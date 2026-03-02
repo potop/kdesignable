@@ -21,7 +21,7 @@ export const FormLayout = {
         fullness: '组件占满',
         inset: '内联布局',
         shallow: '是否浅传递',
-        bordered: '是否有边框',
+        variant: '变体',
         size: { title: '尺寸', dataSource: ['大', '小', '默认', '继承'] },
         layout: { title: '布局', dataSource: ['水平', '垂直', '内联', '继承'] },
         feedbackLayout: {
@@ -57,7 +57,7 @@ export const FormLayout = {
         fullness: 'Fullness',
         inset: 'Inset',
         shallow: 'Shallow',
-        bordered: 'Bordered',
+        variant: 'Variant',
         size: {
           title: 'Size',
           dataSource: ['Large', 'Small', 'Default', 'Inherit'],
@@ -99,7 +99,7 @@ export const FormLayout = {
         fullness: '충만',
         inset: '삽입',
         shallow: '얕다',
-        bordered: '경계',
+        variant: '변형',
         size: {
           title: '크기',
           dataSource: ['큰', '작은', '기본', '상속'],

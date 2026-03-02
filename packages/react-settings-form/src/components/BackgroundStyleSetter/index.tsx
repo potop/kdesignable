@@ -1,6 +1,6 @@
-import { Input, Select } from '@formily/antd-v5'
 import { Field, observer, useField } from '@formily/react'
 import { usePrefix } from '@kdesignable/react'
+import { Input, Select } from '@potop/formily-antd-v6'
 import cls from 'classnames'
 import React from 'react'
 import { ColorInput } from '../ColorInput'

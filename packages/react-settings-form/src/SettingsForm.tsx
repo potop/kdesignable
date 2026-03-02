@@ -1,4 +1,3 @@
-import { Form } from '@formily/antd-v5'
 import { createForm } from '@formily/core'
 import { observer } from '@formily/react'
 import {
@@ -11,6 +10,7 @@ import {
   useWorkbench,
 } from '@kdesignable/react'
 import { cancelIdle, requestIdle } from '@kdesignable/shared'
+import { Form } from '@potop/formily-antd-v6'
 import { Empty } from 'antd'
 import cls from 'classnames'
 import React, { useMemo } from 'react'

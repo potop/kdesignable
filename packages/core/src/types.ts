@@ -27,6 +27,7 @@ export type IEngineProps<T = Event> = IEventProps<T> & {
   defaultComponentTree?: ITreeNode //默认组件树
   defaultScreenType?: ScreenType
   rootComponentName?: string
+  migrateV5Schema?: boolean
 }
 
 export type IEngineContext = {

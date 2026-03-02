@@ -32,12 +32,7 @@ export const Slider: ISchema = {
       'x-decorator': 'FormItem',
       'x-component': 'Switch',
     },
-    tooltipVisible: {
-      type: 'boolean',
-      'x-decorator': 'FormItem',
-      'x-component': 'Switch',
-    },
-    tooltipPlacement: {
+    tooltip: {
       'x-decorator': 'FormItem',
       'x-component': 'ValueInput',
       'x-component-props': {

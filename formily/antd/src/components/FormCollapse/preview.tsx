@@ -8,8 +8,7 @@ import {
   useNodeIdProps,
   useTreeNode,
 } from '@kdesignable/react'
-import { Collapse } from 'antd'
-import { CollapsePanelProps, CollapseProps } from 'antd/lib/collapse'
+import { Collapse, type CollapseProps } from 'antd'
 import React, { Fragment, useState } from 'react'
 import { LoadTemplate } from '../../common/LoadTemplate'
 import { useDropTemplate } from '../../hooks'
@@ -29,7 +28,7 @@ const parseCollapse = (parent: TreeNode) => {
 }
 
 export const FormCollapse: DnFC<CollapseProps> & {
-  CollapsePanel?: React.FC<CollapsePanelProps>
+  CollapsePanel?: React.FC<{ children?: React.ReactNode }>
 } = observer((props) => {
   const [activeKey, setActiveKey] = useState<string | string[]>([])
   const node = useTreeNode()
@@ -54,41 +53,39 @@ export const FormCollapse: DnFC<CollapseProps> & {
   const renderCollapse = () => {
     if (!node.children?.length) return <DroppableWidget />
     return (
-      <Collapse {...props} activeKey={panels.map((tab) => tab.id)}>
-        {panels.map((panel) => {
-          const props = panel.props['x-component-props'] || {}
-          return (
-            <Collapse.Panel
-              {...props}
-              style={{ ...props.style }}
-              header={
-                <span
-                  data-content-editable="x-component-props.header"
-                  data-content-editable-node-id={panel.id}
-                >
-                  {props.header}
-                </span>
-              }
-              key={panel.id}
-            >
-              {React.createElement(
-                'div',
-                {
-                  [designer.props.nodeIdAttrName]: panel.id,
-                  style: {
-                    padding: '20px 0',
-                  },
+      <Collapse
+        {...props}
+        activeKey={panels.map((tab) => tab.id)}
+        items={panels.map((panel) => {
+          const panelProps = panel.props['x-component-props'] || {}
+          return {
+            key: panel.id,
+            style: { ...panelProps.style },
+            label: (
+              <span
+                data-content-editable="x-component-props.header"
+                data-content-editable-node-id={panel.id}
+              >
+                {panelProps.header}
+              </span>
+            ),
+            children: React.createElement(
+              'div',
+              {
+                [designer.props.nodeIdAttrName]: panel.id,
+                style: {
+                  padding: '20px 0',
                 },
-                panel.children.length ? (
-                  <TreeNodeWidget node={panel} />
-                ) : (
-                  <DroppableWidget />
-                )
-              )}
-            </Collapse.Panel>
-          )
+              },
+              panel.children.length ? (
+                <TreeNodeWidget node={panel} />
+              ) : (
+                <DroppableWidget />
+              )
+            ),
+          }
         })}
-      </Collapse>
+      />
     )
   }
   return (

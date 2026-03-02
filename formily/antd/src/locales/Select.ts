@@ -12,7 +12,7 @@ export const Select = {
           tooltip: '仅在多选或者标签模式下支持',
         },
         defaultActiveFirstOption: '默认高亮第一个选项',
-        dropdownMatchSelectWidth: {
+        popupMatchSelectWidth: {
           title: '下拉菜单和选择器同宽',
           tooltip:
             '默认将设置 min-width，当值小于选择框宽度时会被忽略。false 时会关闭虚拟滚动',
@@ -53,7 +53,7 @@ export const Select = {
           tooltip: 'Only used to multiple and tags mode',
         },
         defaultActiveFirstOption: 'Default Active First Option',
-        dropdownMatchSelectWidth: 'Dropdown Match Select Width',
+        popupMatchSelectWidth: 'Popup Match Select Width',
         defaultOpen: 'Default Open',
         filterOption: 'Filter Option',
         filterSort: 'Filter Sort',
@@ -83,7 +83,7 @@ export const Select = {
           tooltip: '다중 모드와 태그 모드만 사용할 수 있습니다.',
         },
         defaultActiveFirstOption: '기본으로 첫번째 옵션을 선택함',
-        dropdownMatchSelectWidth: '드롭다운 너비와 일치시킴',
+        popupMatchSelectWidth: '팝업 너비와 일치시킴',
         defaultOpen: '기본 오픈',
         filterOption: '옵션 필터',
         filterSort: '정렬 필터',

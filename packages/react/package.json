@@ -31,11 +31,11 @@
   "peerDependencies": {
     "@formily/reactive": "^2.3.7",
     "@formily/reactive-react": "^2.3.7",
-    "antd": "^5.26.6",
-    "react": "18.x || 19.x"
+    "antd": "^6.0.0",
+    "react": ">=18.0.0"
   },
   "engines": {
-    "node": ">=18.0.0",
+    "node": ">=22.0.0",
     "npm": ">=3.0.0"
   },
   "publishConfig": {

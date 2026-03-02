@@ -26,6 +26,7 @@ const presets = () => {
     '@formily/core': 'Formily.Core',
     '@formily/json-schema': 'Formily.JSONSchema',
     '@formily/react': 'Formily.React',
+    '@potop/formily-antd-v6': 'Formily.AntdV6',
     '@kdesignable/shared': 'Designable.Shared',
     '@kdesignable/core': 'Designable.Core',
     '@kdesignable/react': 'Designable.React',

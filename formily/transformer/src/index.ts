@@ -5,6 +5,7 @@ import { clone, uid } from '@kdesignable/shared'
 export interface ITransformerOptions {
   designableFieldName?: string
   designableFormName?: string
+  migrateV5Schema?: boolean
 }
 
 export interface IFormilySchema {
@@ -18,6 +19,36 @@ const createOptions = (options: ITransformerOptions): ITransformerOptions => {
     designableFormName: 'Form',
     ...options,
   }
+}
+
+const normalizeV5Props = (node: ITreeNode) => {
+  const props = node.props?.['x-component-props']
+  if (props) {
+    if ('bordered' in props) {
+      if (!('variant' in props)) {
+        props.variant = props.bordered === false ? 'borderless' : 'outlined'
+      }
+      delete props.bordered
+    }
+    if ('dropdownMatchSelectWidth' in props) {
+      if (!('popupMatchSelectWidth' in props)) {
+        props.popupMatchSelectWidth = props.dropdownMatchSelectWidth
+      }
+      delete props.dropdownMatchSelectWidth
+    }
+    if ('tooltipVisible' in props || 'tooltipPlacement' in props) {
+      if (!('tooltip' in props)) {
+        const tooltip: Record<string, any> = {}
+        if ('tooltipVisible' in props) tooltip.open = props.tooltipVisible
+        if ('tooltipPlacement' in props)
+          tooltip.placement = props.tooltipPlacement
+        props.tooltip = tooltip
+      }
+      delete props.tooltipVisible
+      delete props.tooltipPlacement
+    }
+  }
+  node.children?.forEach(normalizeV5Props)
 }
 
 const findNode = (node: ITreeNode, finder?: (node: ITreeNode) => boolean) => {
@@ -118,5 +149,8 @@ export const transformToTreeNode = (
     schema['x-designable-id'] = schema['x-designable-id'] || uid()
     appendTreeNode(root, schema)
   })
+  if (realOptions.migrateV5Schema) {
+    normalizeV5Props(root)
+  }
   return root
 }

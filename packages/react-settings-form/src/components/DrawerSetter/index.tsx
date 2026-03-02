@@ -1,6 +1,6 @@
-import { FormLayout } from '@formily/antd-v5'
 import { observer, useField } from '@formily/react'
 import { IconWidget, usePrefix, useTreeNode } from '@kdesignable/react'
+import { FormLayout } from '@potop/formily-antd-v6'
 import { Button, ButtonProps } from 'antd'
 import cls from 'classnames'
 import React, { Fragment, useLayoutEffect, useState } from 'react'

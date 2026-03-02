@@ -91,7 +91,7 @@ import {
   FormCollapse,
   ArrayTable,
   ArrayCards,
-} from '@formily/antd-v5'
+} from '@potop/formily-antd-v6'
 import { Card, Slider, Rate } from 'antd'
 
 const Text: React.FC<{
