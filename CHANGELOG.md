@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.0-beta.71(2025-07-25)
+
+### :blush: Other Changes
+
+1. [chore: Upgrade Ant Design to 5.26.6 in all packages](https://github.com/potop/kdesignable/commit/1eb2006) :point_right: ( [Alexander Simbirtsev](https://github.com/Alexander Simbirtsev) )
+
 ## v1.0.0-beta.70(2025-07-24)
 
 ### :blush: Other Changes

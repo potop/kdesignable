@@ -1,6 +1,6 @@
 {
   "name": "@kdesignable/formily-setters",
-  "version": "1.0.0-beta.71",
+  "version": "1.0.0",
   "homepage": "https://github.com/potop/kdesignable#readme",
   "bugs": {
     "url": "https://github.com/potop/kdesignable/issues"
@@ -20,10 +20,10 @@
     "start": "webpack-dev-server --config playground/webpack.dev.ts"
   },
   "dependencies": {
-    "@kdesignable/core": "1.0.0-beta.71",
-    "@kdesignable/formily-transformer": "1.0.0-beta.71",
-    "@kdesignable/react": "1.0.0-beta.71",
-    "@kdesignable/react-settings-form": "1.0.0-beta.71"
+    "@kdesignable/core": "1.0.0",
+    "@kdesignable/formily-transformer": "1.0.0",
+    "@kdesignable/react": "1.0.0",
+    "@kdesignable/react-settings-form": "1.0.0"
   },
   "devDependencies": {
     "@formily/react": "^2.3.7",
