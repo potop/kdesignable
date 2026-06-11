@@ -25,9 +25,8 @@
     "@kdesignable/react": "1.0.0",
     "@kdesignable/shared": "1.0.0",
     "@monaco-editor/react": "^4.7.0",
-    "monaco-editor": "^0.52.2",
+    "monaco-editor": "^0.55.1",
     "prettier": "^2.3.2",
-    "react-color": "^2.19.3",
     "react-tiny-popover": "^8.1.6"
   },
   "devDependencies": {

@@ -7,9 +7,11 @@ import cls from 'classnames'
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api'
 import React, { useEffect, useRef, useState } from 'react'
 import './config'
-import { initMonaco } from './config'
+import { getTypeScriptApi, initMonaco } from './config'
 import { format } from './format'
 import './styles.scss'
+
+export { getTypeScriptApi } from './config'
 
 export type Monaco = typeof monaco
 export interface MonacoInputProps extends EditorProps {
@@ -73,11 +75,9 @@ export const MonacoInput: React.FC<MonacoInputProps> & {
     if (extraLibRef.current) {
       extraLibRef.current.dispose()
     }
-    extraLibRef.current =
-      monacoRef.current.languages.typescript.typescriptDefaults.addExtraLib(
-        props.extraLib,
-        `${uidRef.current}.d.ts`
-      )
+    extraLibRef.current = getTypeScriptApi(
+      monacoRef.current
+    ).typescriptDefaults.addExtraLib(props.extraLib, `${uidRef.current}.d.ts`)
   }
 
   const isFileLanguage = () => {

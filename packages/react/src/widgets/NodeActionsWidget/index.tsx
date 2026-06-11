@@ -1,5 +1,5 @@
 import { observer } from '@formily/reactive-react'
-import { Divider, Space, Typography, TypographyProps } from 'antd'
+import { Divider, GetProps, Space, Typography } from 'antd'
 import cls from 'classnames'
 import React, { PropsWithChildren } from 'react'
 import { usePrefix, useSelected, useTreeNode } from '../../hooks'
@@ -14,8 +14,7 @@ export interface INodeActionsWidgetProps {
 }
 
 export interface INodeActionsWidgetActionProps
-  extends Omit<React.ComponentProps<'a'>, 'title' | 'type' | 'ref'>,
-    Partial<TypographyProps['Link']> {
+  extends Omit<GetProps<typeof Typography.Link>, 'title' | 'type' | 'ref'> {
   className?: string
   style?: React.CSSProperties
   title: React.ReactNode

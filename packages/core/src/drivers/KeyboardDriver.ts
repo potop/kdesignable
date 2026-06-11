@@ -5,9 +5,10 @@ function filter(event: KeyboardEvent) {
   const target: any = event.target
   const { tagName } = target
   let flag = true
-  // ignore: isContentEditable === 'true', <input> and <textarea> when readOnly state is false, <select>、Web Components
+  // ignore: isContentEditable === 'true', EditContext-backed inputs (e.g. Monaco >= 0.53), <input> and <textarea> when readOnly state is false, <select>、Web Components
   if (
     target['isContentEditable'] ||
+    target['editContext'] ||
     ((tagName === 'INPUT' ||
       tagName === 'TEXTAREA' ||
       tagName === 'SELECT' ||

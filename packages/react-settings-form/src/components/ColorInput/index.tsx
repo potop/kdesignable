@@ -1,7 +1,6 @@
 import { usePrefix } from '@kdesignable/react'
-import { Input, Popover } from 'antd'
-import React, { useRef } from 'react'
-import { SketchPicker } from 'react-color'
+import { ColorPicker, Input } from 'antd'
+import React from 'react'
 import './styles.scss'
 
 export interface IColorInputProps {
@@ -10,11 +9,10 @@ export interface IColorInputProps {
 }
 
 export const ColorInput: React.FC<IColorInputProps> = (props) => {
-  const container = useRef<HTMLDivElement>(null)
   const prefix = usePrefix('color-input')
   const color = props.value as string
   return (
-    <div ref={container} className={prefix}>
+    <div className={prefix}>
       <Input
         value={props.value === null ? undefined : props.value}
         onChange={(e) => {
@@ -22,23 +20,11 @@ export const ColorInput: React.FC<IColorInputProps> = (props) => {
         }}
         placeholder="Color"
         prefix={
-          <Popover
-            autoAdjustOverflow
-            trigger="click"
-            styles={{
-              content: {
-                padding: 0,
-              },
+          <ColorPicker
+            value={color}
+            onChange={(value) => {
+              props.onChange?.(value.toRgbString())
             }}
-            getPopupContainer={() => container.current}
-            content={
-              <SketchPicker
-                color={color}
-                onChange={({ rgb }) => {
-                  props.onChange?.(`rgba(${rgb.r},${rgb.g},${rgb.b},${rgb.a})`)
-                }}
-              />
-            }
           >
             <div
               className={prefix + '-color-tips'}
@@ -46,7 +32,7 @@ export const ColorInput: React.FC<IColorInputProps> = (props) => {
                 backgroundColor: color,
               }}
             ></div>
-          </Popover>
+          </ColorPicker>
         }
       />
     </div>

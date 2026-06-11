@@ -1,28 +1,35 @@
 import { loader } from '@monaco-editor/react'
+import { format } from './format'
 import chromeTheme from './themes/chrome'
 import monokaiTheme from './themes/monokai'
-import { format } from './format'
 
 let initialized = false
+
+// monaco >= 0.53 moved the TypeScript language service from
+// monaco.languages.typescript to the top-level monaco.typescript namespace
+export const getTypeScriptApi = (monaco: any) => {
+  return monaco.typescript ?? monaco.languages.typescript
+}
 
 export const initMonaco = () => {
   if (initialized) return
   loader.init().then((monaco) => {
     monaco.editor.defineTheme('monokai', monokaiTheme as any)
     monaco.editor.defineTheme('chrome-devtools', chromeTheme as any)
-    monaco.languages.typescript.typescriptDefaults.setCompilerOptions({
-      target: monaco.languages.typescript.ScriptTarget.Latest,
+    const typescript = getTypeScriptApi(monaco)
+    typescript.typescriptDefaults.setCompilerOptions({
+      target: typescript.ScriptTarget.Latest,
       allowNonTsExtensions: true,
-      moduleResolution: monaco.languages.typescript.ModuleResolutionKind.NodeJs,
-      module: monaco.languages.typescript.ModuleKind.CommonJS,
+      moduleResolution: typescript.ModuleResolutionKind.NodeJs,
+      module: typescript.ModuleKind.CommonJS,
       noEmit: true,
       esModuleInterop: true,
-      jsx: monaco.languages.typescript.JsxEmit.React,
+      jsx: typescript.JsxEmit.React,
       reactNamespace: 'React',
       allowJs: true,
     })
 
-    monaco.languages.typescript.typescriptDefaults.setDiagnosticsOptions({
+    typescript.typescriptDefaults.setDiagnosticsOptions({
       noSemanticValidation: false,
       noSyntaxValidation: true,
     })
