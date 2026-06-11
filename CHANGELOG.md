@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.0(2026-03-02)
+
+### :blush: Other Changes
+
+1. [chore: pin webpack, webpack-cli and webpack-dev-server to invulnerable versions](https://github.com/potop/kdesignable/commit/c27bfe5) :point_right: ( [Alexander Simbirtsev](https://github.com/Alexander Simbirtsev) )
+
+1. [chore: migrate all packages to Ant Design v6 and update dependencies](https://github.com/potop/kdesignable/commit/caca552) :point_right: ( [Alexander Simbirtsev](https://github.com/Alexander Simbirtsev) )
+
 ## v1.0.0-beta.71(2025-07-25)
 
 ### :blush: Other Changes
