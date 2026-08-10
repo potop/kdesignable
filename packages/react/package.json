@@ -1,6 +1,6 @@
 {
   "name": "@kdesignable/react",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/potop/kdesignable#readme",
   "bugs": {
     "url": "https://github.com/potop/kdesignable/issues"
@@ -20,8 +20,8 @@
     "build:umd": "rollup --config"
   },
   "dependencies": {
-    "@kdesignable/core": "1.0.1",
-    "@kdesignable/shared": "1.0.1",
+    "@kdesignable/core": "1.0.2",
+    "@kdesignable/shared": "1.0.2",
     "dateformat": "^4.5.1"
   },
   "devDependencies": {

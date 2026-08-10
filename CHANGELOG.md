@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.1(2026-06-11)
+
+### :beetle: Bug Fixes
+
+1. [fix: support Monaco 0.53+ and replace react-color with antd ColorPicker](https://github.com/potop/kdesignable/commit/bcfeab0) :point_right: ( [Alexander Simbirtsev](https://github.com/Alexander Simbirtsev) )
+
 ## v1.0.0(2026-03-02)
 
 ### :blush: Other Changes
