@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.0.2(2026-08-10)
+
+### :tada: Enhancements
+
+1. [feat(formily-antd): add a Button component to the designer palette](https://github.com/potop/kdesignable/commit/5ed67ab) :point_right: ( [Alexander Simbirtsev](https://github.com/Alexander Simbirtsev) )
+
 ## v1.0.1(2026-06-11)
 
 ### :beetle: Bug Fixes
