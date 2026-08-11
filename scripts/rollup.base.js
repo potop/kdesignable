@@ -76,6 +76,10 @@ export const removeImportStyleFromInputFilePlugin = () => ({
   },
 })
 
+// UMD cannot code-split, so any dynamic import() in a package has to be inlined into
+// the single bundle. This is a no-op for packages that have none.
+const inlineDynamicImports = true
+
 export default (filename, targetName, ...plugins) => [
   {
     input: 'src/index.ts',
@@ -83,6 +87,7 @@ export default (filename, targetName, ...plugins) => [
       format: 'umd',
       file: `dist/${filename}.umd.production.min.js`,
       name: targetName,
+      inlineDynamicImports,
     },
     plugins: [...presets(filename, targetName), ...plugins],
   },
@@ -92,6 +97,7 @@ export default (filename, targetName, ...plugins) => [
       format: 'umd',
       file: `dist/${filename}.umd.production.js`,
       name: targetName,
+      inlineDynamicImports,
     },
     plugins: [...presets(filename, targetName), terser(), ...plugins],
   },
